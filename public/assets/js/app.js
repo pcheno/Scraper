@@ -54,7 +54,6 @@ $(document).ready(function () {
             }
         );
     });
-
     // click handler for changing status of article
     $("body").on("click", ".save", function (event) {
 

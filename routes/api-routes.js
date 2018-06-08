@@ -35,9 +35,6 @@ module.exports = function (app) {
 
             });
 
-            //results.forEach(function (result) {
-                //   console.log(result.link);
-             //   } );
             let counter = 0;
             // Create a new Article using the `result` object built from scraping
             results.forEach(function (article, idx) {
@@ -156,15 +153,12 @@ module.exports = function (app) {
             });
     });
 
-    // Route for 
     app.put("/api/delete/articles/:id", function (req, res) {
-        // 
         db.Article.findOneAndUpdate({ _id: req.params.id }, { saved: false })
             .then(function (dbArticle) {
                 res.json(dbArticle);
             })
             .catch(function (err) {
-                // If an error occurred, send it to the client
                 res.json(err);
             });
     });

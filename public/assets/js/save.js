@@ -64,10 +64,8 @@ $(document).ready(function () {
                     noteDeleteBtn.addClass("btn btn-danger note-delete float-right").text("x").attr("data-note-id", note._id).attr("data-article-id", dbArticle._id);
                     var listItem = $("<li>");
                     listItem.addClass("list-group-item note").text(note.body);
-
                     listItem.append(noteDeleteBtn);
                     $(".note-container").append(listItem);
-
                 });
 
             } else {
@@ -77,7 +75,7 @@ $(document).ready(function () {
     };
 
 
-    // click handler for changing status of article
+    // remove article
     $("body").on("click", ".delete", function (event) {
 
         // variable to obtain article's id
@@ -102,7 +100,7 @@ $(document).ready(function () {
         pushNotes(articleId);
     });
 
-    // When you click the savenote button
+    // create new note
     $("#new-note-btn").on("click", function () {
         // Grab the id associated with the article from the submit button
         var articleId = $(this).attr("data-article-id");
@@ -147,7 +145,7 @@ $(document).ready(function () {
                     _id: $(this).attr("data-note-id")
                 }
             })
-            // With that done
+            
             .then(function (data) {
                 $(".message").empty();
                 // re-render the notes

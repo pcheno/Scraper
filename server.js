@@ -6,8 +6,6 @@ const mongoose = require("mongoose");
 let request = require("request");
 let cheerio = require("cheerio");
 
-// sets up the Express App
-// =============================================================
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -33,7 +31,6 @@ app.set('views', path.join(__dirname, '/views'));
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytscraper";
 
-// Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
