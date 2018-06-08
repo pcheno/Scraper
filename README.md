@@ -16,7 +16,7 @@
     <h1>Description</h1>
     <h2>Scrapes the NY Times webpage for news articles. Then the user can save articles and add notes</h2>
     <br>
-    <h1>Packages -Node used</h1>
+    <h1>Node Packages used:</h1>
     <br>
    <h2>cheerio,mongoose,request,express, body-parser, express-handlebars, and path</h2>
     <br>
